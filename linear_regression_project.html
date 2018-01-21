@@ -11773,7 +11773,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 任意选一个你喜欢的整数，这能帮你得到稳定的结果</span>
@@ -11806,7 +11806,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 这个项目设计来帮你熟悉 python list 和线性代数</span>
@@ -11849,12 +11849,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 返回矩阵的行数和列数</span>
 <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># if len(M)&gt;0 else [] 在不满足输入条件时，不做判断，let it crash </span>
 </pre></div>
 
 </div>
@@ -11864,7 +11864,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 shape 函数</span>
@@ -11887,7 +11887,7 @@ div#notebook {
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.002s
+Ran 1 test in 0.004s
 
 OK
 </pre>
@@ -11908,7 +11908,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 每个元素四舍五入到特定小数数位</span>
@@ -11926,7 +11926,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 matxRound 函数</span>
@@ -11949,7 +11949,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.038s
+Ran 1 test in 0.055s
 
 OK
 </pre>
@@ -11970,17 +11970,20 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 计算矩阵的转置</span>
 <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
-    <span class="n">row_num</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-    <span class="n">new_m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_num</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_num</span><span class="p">)]</span> <span class="c1"># 不能使用[array] * 3操作，因为这只是创建3个指向array的引用，所以一旦其中一个array改变，matrix中3个list也会随之改变</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_num</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_num</span><span class="p">):</span>
-            <span class="n">new_m</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">new_m</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    row_num, col_num = shape(M)</span>
+<span class="sd">    new_m = [[0 for j in range(row_num)] for i in range(col_num)] # 不能使用[array] * 3操作，因为这只是创建3个指向array的引用，所以一旦其中一个array改变，matrix中3个list也会随之改变</span>
+<span class="sd">    for i in range(row_num):</span>
+<span class="sd">        for j in range(col_num):</span>
+<span class="sd">            new_m[j][i] = M[i][j]</span>
+<span class="sd">    return new_m</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">M</span><span class="p">)]</span> <span class="c1"># 更简洁的写法，要利用好内置函数</span>
 </pre></div>
 
 </div>
@@ -11990,7 +11993,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 transpose 函数</span>
@@ -12013,7 +12016,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.018s
+Ran 1 test in 0.010s
 
 OK
 </pre>
@@ -12034,7 +12037,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 计算矩阵乘法 AB，如果无法相乘则raise ValueError</span>
@@ -12053,7 +12056,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 matxMultiply 函数</span>
@@ -12076,7 +12079,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.475s
+Ran 1 test in 0.042s
 
 OK
 </pre>
@@ -12117,23 +12120,26 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 构造增广矩阵，假设A，b行数相同</span>
 <span class="k">def</span> <span class="nf">augmentMatrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
-    <span class="n">row_num_a</span><span class="p">,</span> <span class="n">col_num_a</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-    <span class="n">row_num_b</span><span class="p">,</span> <span class="n">col_num_b</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">row_num_a</span><span class="o">==</span><span class="n">row_num_b</span><span class="p">,</span> <span class="s1">&#39;Matrix A and b has different row number!!!&#39;</span>
-    <span class="n">row_num_new</span><span class="p">,</span> <span class="n">col_num_new</span> <span class="o">=</span> <span class="n">row_num_a</span><span class="p">,</span> <span class="n">col_num_a</span> <span class="o">+</span> <span class="n">col_num_b</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_num_new</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_num_new</span><span class="p">)]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_num_a</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_num_a</span><span class="p">):</span>
-            <span class="n">new</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_num_b</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_num_b</span><span class="p">):</span>
-            <span class="n">new</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col_num_a</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">new</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    row_num_a, col_num_a = shape(A)</span>
+<span class="sd">    row_num_b, col_num_b = shape(B)</span>
+<span class="sd">    # assert row_num_a==row_num_b, &#39;Matrix A and b has different row number!!!&#39; also let it crash</span>
+<span class="sd">    row_num_new, col_num_new = row_num_a, col_num_a + col_num_b</span>
+<span class="sd">    new = [[0 for j in range(col_num_new)] for i in range(row_num_new)]</span>
+<span class="sd">    for i in range(row_num_a):</span>
+<span class="sd">        for j in range(col_num_a):</span>
+<span class="sd">            new[i][j] = A[i][j]</span>
+<span class="sd">    for i in range(row_num_b):</span>
+<span class="sd">        for j in range(col_num_b):</span>
+<span class="sd">            new[i][col_num_a+j] = B[i][j]</span>
+<span class="sd">    return new</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">a_row</span> <span class="o">+</span> <span class="n">b_row</span> <span class="k">for</span> <span class="n">a_row</span><span class="p">,</span> <span class="n">b_row</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)]</span> <span class="c1"># replace with zip(x, y)</span>
 </pre></div>
 
 </div>
@@ -12143,7 +12149,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 augmentMatrix 函数</span>
@@ -12166,7 +12172,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.006s
+Ran 1 test in 0.005s
 
 OK
 </pre>
@@ -12192,7 +12198,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO r1 &lt;---&gt; r2</span>
@@ -12208,7 +12214,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 swapRows 函数</span>
@@ -12231,7 +12237,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.030s
+Ran 1 test in 0.005s
 
 OK
 </pre>
@@ -12244,7 +12250,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO r1 &lt;--- r1 * scale</span>
@@ -12263,7 +12269,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 scaleRow 函数</span>
@@ -12286,7 +12292,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.022s
+Ran 1 test in 0.002s
 
 OK
 </pre>
@@ -12299,14 +12305,14 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO r1 &lt;--- r1 + r2*scale</span>
 <span class="c1"># 直接修改参数矩阵，无返回值</span>
 <span class="k">def</span> <span class="nf">addScaledRow</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
-    <span class="n">r2_scale</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="n">r2</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">r2</span><span class="p">]))]</span>
-    <span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="n">r2_scale</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">]))]</span>
+    <span class="c1">#r2_scale = [M[r2][idx] * scale for idx in range(len(M[r2]))]</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">r2</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">r1</span><span class="p">]))]</span> <span class="c1"># all in one row</span>
 </pre></div>
 
 </div>
@@ -12316,7 +12322,7 @@ OK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 运行以下代码测试你的 addScaledRow 函数</span>
@@ -12339,7 +12345,7 @@ OK
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.003s
+Ran 1 test in 0.004s
 
 OK
 </pre>
@@ -12495,15 +12501,15 @@ $\begin{bmatrix}
 <p>$ --&gt; \begin{bmatrix}
     1 &amp; -\frac{9}{7} &amp; \frac{2}{7} &amp; \frac{1}{7} \\
     0 &amp; -\frac{108}{7} &amp; \frac{52}{7} &amp; \frac{12}{7} \\
-    0 &amp; -\frac{43}{7} &amp; -\frac{43}{7} &amp; \frac{10}{7} \end{bmatrix}$</p>
+    0 &amp; -\frac{43}{7} &amp; -\frac{55}{7} &amp; \frac{4}{7} \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
     1 &amp; 0 &amp; -\frac{1}{3} &amp; 0 \\
     0 &amp; 1 &amp; -\frac{13}{27} &amp; -\frac{1}{9} \\
-    0 &amp; 0 &amp; -\frac{1720}{189} &amp; \frac{47}{63} \end{bmatrix}$</p>
+    0 &amp; 0 &amp; -\frac{292}{27} &amp; -\frac{1}{9} \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
-    1 &amp; 0 &amp; 0 &amp; \frac{47}{1720} \\
-    0 &amp; 1 &amp; 0 &amp; -\frac{1109}{15480} \\
-    0 &amp; 0 &amp; 1 &amp; \frac{141}{1720} \end{bmatrix}$</p>
+    1 &amp; 0 &amp; 0 &amp; \frac{1}{292} \\
+    0 &amp; 1 &amp; 0 &amp; -\frac{31}{292} \\
+    0 &amp; 0 &amp; 1 &amp; \frac{3}{292} \end{bmatrix}$</p>
 <p>$...$</p>
 
 </div>
@@ -12568,11 +12574,11 @@ $\begin{bmatrix}
 <p>$ --&gt; \begin{bmatrix}
     1 &amp; -\frac{2}{7} &amp; \frac{2}{7} &amp; -\frac{1}{7} \\
     0 &amp; \frac{30}{7} &amp; -\frac{30}{7} &amp; \frac{8}{7} \\
-    0 &amp; -\frac{30}{7} &amp; \frac{30}{7} &amp; \frac{13}{6} \end{bmatrix}$</p>
+    0 &amp; -\frac{30}{7} &amp; \frac{30}{7} &amp; \frac{13}{7} \end{bmatrix}$</p>
 <p>$ --&gt; \begin{bmatrix}
     1 &amp; 0 &amp; 0 &amp; -\frac{1}{15} \\
     0 &amp; 1 &amp; -1 &amp; \frac{4}{15} \\
-    0 &amp; 0 &amp; 0 &amp; \frac{139}{42} \end{bmatrix}$</p>
+    0 &amp; 0 &amp; 0 &amp; 3 \end{bmatrix}$</p>
 <p>可以看到出现了0=k,k不为0的情况，所以该矩阵无解
 $...$</p>
 
@@ -12589,7 +12595,7 @@ $...$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO 实现 Gaussain Jordan 方法求解 Ax = b</span>
@@ -12605,7 +12611,7 @@ $...$</p>
 <span class="sd">    返回None，如果 A，b 高度不同</span>
 <span class="sd">    返回None，如果 A 为奇异矩阵</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
+<span class="c1"># from fractions import Fraction 分数计算</span>
 <span class="k">def</span> <span class="nf">gj_Solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">decPts</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0e-16</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">is_zero</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -12632,15 +12638,19 @@ $...$</p>
 <span class="sd">        求解</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">Ab</span> <span class="o">=</span> <span class="n">augmentMatrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 获取增广矩阵</span>
+        <span class="c1"># Ab = [[Fraction(Ab[i][j]) for j in range(len(Ab[0]))] for i in range(len(Ab))] 分数计算</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">A</span><span class="p">)[</span><span class="mi">1</span><span class="p">]):</span> <span class="c1"># 循环矩阵A的每一列</span>
             <span class="n">col_elements</span> <span class="o">=</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ab</span><span class="p">[</span><span class="n">row_num</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">row_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">shape</span><span class="p">(</span><span class="n">Ab</span><span class="p">)[</span><span class="mi">0</span><span class="p">])]</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">max_idx</span> <span class="o">=</span> <span class="n">get_max_idx</span><span class="p">(</span><span class="n">col_elements</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span> <span class="c1"># 注意此处+i的目的是将返回的角标加上该列上方不予比较的行数</span>
                 <span class="n">swapRows</span><span class="p">(</span><span class="n">Ab</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">max_idx</span><span class="p">)</span> <span class="c1"># 交换当前i行与拥有满足条件的最大绝对值的行</span>
                 <span class="n">scaleRow</span><span class="p">(</span><span class="n">Ab</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">Ab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="c1"># 将该行对角线元素化为1</span>
+                <span class="c1"># scaleRow(Ab, i, Fraction(1, Ab[i][i])) # 将该行对角线元素化为1  分数计算</span>
                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">Ab</span><span class="p">)[</span><span class="mi">0</span><span class="p">]):</span> <span class="c1"># 将该列其他元素化为0</span>
                     <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;&gt;</span> <span class="n">i</span><span class="p">:</span>
-                        <span class="n">addScaledRow</span><span class="p">(</span><span class="n">Ab</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="n">Ab</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+                        <span class="n">addScaledRow</span><span class="p">(</span><span class="n">Ab</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="n">Ab</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+                        <span class="c1"># addScaledRow(Ab, j, i, Fraction(-Ab[j][i])) 分数计算</span>
+                
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">None</span>
         <span class="k">return</span> <span class="p">[[</span><span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">Ab</span><span class="p">]</span>
